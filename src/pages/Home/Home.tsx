@@ -1,5 +1,6 @@
-import { Header } from "../../components";
 import "./home.css";
+import { Header } from "../../components";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
       return (
@@ -24,7 +25,7 @@ export const Home = () => {
                                                       Take the action-packed Sports quiz and Get ready to play!
                                                 </p>
 
-                                                <a href="/rules/rules.html" className="play_btn">Play Now</a>
+                                                <Link className="play_btn" to="/rules">Explore Quiz</Link>
                                           </div>
                                     </div>
                               </div>
@@ -42,14 +43,14 @@ export const Home = () => {
                                                       Take the action-packed Web Dev quiz and Get ready to play!
                                                 </p>
 
-                                                <a href="/rules/rules.html" className="play_btn">Play Now</a>
+                                                <Link className="play_btn" to="/rules">Explore Quiz</Link>
                                           </div>
                                     </div>
                               </div>
                         </div>
                   </div>
 
-                  {/* -- Share Quiz -- */}
+                  {/* -- Share Quiz - TODO- */}
 
                   <div className="modal_box flex_justify_center flex_align_center" id="modal_box">
                         <div className="modal flex flex_col flex_justify_center flex_align_center">

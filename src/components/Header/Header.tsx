@@ -1,4 +1,5 @@
 import "./header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
       return (
@@ -13,25 +14,29 @@ export const Header = () => {
                                     <i className="fas fa-user-circle profile"></i>
                               </a>
 
-                              {/* <div className="profile_box profile_menu flex_col">
-                    <div className="profile_options">
-                        <ul className="menu flex flex_col flex_justify_center flex_align_start">
-                            <div className="flex flex_row flex_justify_around flex_align_center">
-                                <h3>New to Quizzically?</h3>
-                                <a className="btn btn_primary" href="/auth/signup.html">Sign Up</a>
-                            </div>
-                            <a className="menu_link" href="/user-profile/user-profile.html" ><li className="profile_content">Your Profile</li> </a>
-                            <a className="menu_link" href="#"><li className="profile_content">Quiz Board</li> </a>
-                            <a className="menu_link" href="#"><li className="profile_content">Create Quiz</li> </a>
-                            <a className="menu_link" href="#"><li className="profile_content modal_btn_live" id="modal_btn_live" >Share Quiz</li> </a>
-                            <a className="menu_link" href="#"> <li className="profile_content">Play with others</li></a>
-                            <a className="menu_link" href="/auth/forgotpwd.html" ><li className="profile_content">Forgot Password</li> </a>
-                            <a className="menu_link" href="/auth/logout.html"><li className="profile_content">Logout</li> </a>
-                        </ul>
-                    </div>
-                </div> */}
+                              {/* TODO */}
 
-                              <a className="btn btn_primary" href="/auth/login.html">Login</a>
+                              {/* <div className="profile_box profile_menu flex_col">
+                                    <div className="profile_options">
+                                          <ul className="menu flex flex_col flex_justify_center flex_align_start">
+                                          <div className="flex flex_row flex_justify_around flex_align_center">
+                                                <h3>New to Quizzically?</h3>
+                                                <a className="btn btn_primary" href="/auth/signup.html">Sign Up</a>
+                                          </div>
+                                          <a className="menu_link" href="/user-profile/user-profile.html" ><li className="profile_content">Your Profile</li> </a>
+                                          <a className="menu_link" href="#"><li className="profile_content">Quiz Board</li> </a>
+                                          <a className="menu_link" href="#"><li className="profile_content">Create Quiz</li> </a>
+                                          <a className="menu_link" href="#"><li className="profile_content modal_btn_live" id="modal_btn_live" >Share Quiz</li> </a>
+                                          <a className="menu_link" href="#"> <li className="profile_content">Play with others</li></a>
+                                          <a className="menu_link" href="/auth/forgotpwd.html" ><li className="profile_content">Forgot Password</li> </a>
+                                          <a className="menu_link" href="/auth/logout.html"><li className="profile_content">Logout</li> </a>
+                                          </ul>
+                                    </div>
+                              </div> */}
+
+                              <Link className="btn btn_primary" to="/Signin">
+                                    Login
+                              </Link>
 
                         </div>
                   </div>
