@@ -1,11 +1,9 @@
-import './App.css';
+import "./auth.css";
 
-import { Link } from "react-router-dom";
-
-function App() {
-  return (
-    <div className="App">
-      <header className="main_header">
+export const signup = () => {
+      return (
+            <div className="body">
+                <header className="main_header">
         <div className="navigation flex flex_justify_between flex_align_center" id="header_box">
             <div className="nav_center searchbar">
                 <input type="search" className="input input_search search" placeholder="Search for quizzes" />
@@ -23,7 +21,7 @@ function App() {
                                 <h3>New to Quizzically?</h3>
                                 <a className="btn btn_primary" href="/auth/signup.html">Sign Up</a>
                             </div>
-                            <a className="menu_link" href="/user-profile/user-profile.html" ><li className="profile_content">Your Profile</li> </a>
+                            <a className="menu_link" href="/"><li className="profile_content">Home</li> </a>
                             <a className="menu_link" href="#"><li className="profile_content">Quiz Board</li> </a>
                             <a className="menu_link" href="#"><li className="profile_content">Create Quiz</li> </a>
                             <a className="menu_link" href="#"><li className="profile_content modal_btn_live" id="modal_btn_live" >Share Quiz</li> </a>
@@ -39,50 +37,24 @@ function App() {
             </div>
         </div>
     </header>
-
-    <h1 className="top_heading">Quizzically</h1>
-    <span className="top_subhead">Unlock Knowledge At The Speed Of Thought...</span>
-
-    <div className="categories flex flex_wrap flex_justify_center flex_align_center">
-
-        <div className="card_image">
-            <div className="card_vertical">
-                <div className="card_vertical_info flex flex_col">
-                    <img className="img_responsive adjust_image" src="assets/f2.png" alt="category"></img>
-
-                    <div className="flex_justify_center flex_align_center flex flex_col">
-                        <h2 className="card_title">SPORTS</h2>
-
-                        <p className="card_subtitle">
-                            Take the action-packed Sports quiz and Get ready to play!
-                        </p>
-
-                        <a href="/rules/rules.html" className="play_btn">Play Now</a>
-                    </div>
-                </div>
+        
+    <div className="input_container flex flex_col">
+        <form className="input_field flex flex_col">
+            <h2 className="input_heading">Signup</h2>
+            <label className="input_label">Email address</label>
+            <input className="input_box" type="email" placeholder="manoj@neog.camp" required />
+            <label className="input_label">Create Password</label>
+            <input className="input_box" type="name" placeholder="***********" required />
+            <div className="inp_checkbox flex flex_justify_start flex_align_center">
+                <input type="checkbox" className="input_checkbox"> </input>
+                <p className="checkbox_notify">I accept all Terms & Conditions</p>
             </div>
-        </div>
-
-        <div className="card_image">
-            <div className="card_vertical">
-                <div className="card_vertical_info flex flex_col">
-                    <img className="img_responsive adjust_image" src="assets/dev3.jpg" alt="category" />
-
-                    <div className="flex_justify_center flex_align_center flex flex_col">
-                        <h2 className="card_title">WEB DEVELOPMENT</h2>
-
-                        <p className="card_subtitle">
-                            Take the action-packed Web Dev quiz and Get ready to play!
-                        </p>
-
-                        <a href="/rules/rules.html" className="play_btn">Play Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <button className="btn btn_primary">Create New Account</button>
+            <p className="input_subheading"><a href="/auth/login.html" id="input_subheading">Already have an account {'>'}</a> </p> 
+        </form>
     </div>
 
-    {/* -- Share Quiz -- */}
+    {/* <!-- Share Quiz --> */}
 
     <div className="modal_box flex_justify_center flex_align_center" id="modal_box">
         <div className="modal flex flex_col flex_justify_center flex_align_center">
@@ -96,9 +68,7 @@ function App() {
                 <button className="btn btn_primary modal_btn_close" id="modal_btn_close">Close</button>
             </div>
         </div>
-    </div>
-    </div>
-  );
+    </div>  
+            </div>
+      )
 }
-
-export default App;
