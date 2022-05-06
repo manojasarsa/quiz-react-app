@@ -1,6 +1,5 @@
 import "./home.css";
 import { CategoryCard, Header } from "../../components";
-import { Link } from "react-router-dom";
 
 export const Home = () => {
       return (

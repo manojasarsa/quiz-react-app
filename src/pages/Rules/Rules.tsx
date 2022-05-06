@@ -26,5 +26,4 @@ export const Rules = () => {
                   </div>
             </div>
       )
-
 }

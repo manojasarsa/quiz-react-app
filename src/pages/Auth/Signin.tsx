@@ -21,12 +21,10 @@ export const Signin = () => {
                     </div>
                     <p className="input_subheading">
                         <Link id="input_subheading" to="/forgotpwd">Forgot your Password?</Link>
-                        {/* <a href="/auth/forgotpwd.html" id="input_subheading"></a> */}
                     </p>
                     <button className="btn btn_primary">Login</button>
                     <p className="input_subheading">
                         <Link to="/signup" id="input_subheading">Create New Account {'>'} </Link>
-                        {/* <a href="/auth/signup.html" id="input_subheading">Create New Account {'>'} </a> */}
                     </p>
                 </form>
             </div>

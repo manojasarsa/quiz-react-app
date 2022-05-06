@@ -13,7 +13,6 @@ export const Signout = () => {
                               <p className="logout_text">You are signed out now :(</p>
                               <p className="logout_text">Come back soon!</p>
                               <Link className="link" to="/signup">Back to Home</Link>
-                              {/* <a className="link" href="/">Back to Home</a> */}
                         </div>
                   </main>
 

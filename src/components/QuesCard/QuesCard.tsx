@@ -34,13 +34,8 @@ export const QuesCard = () => {
                         </form>
 
                         <div className="ques_btn_box flex flex_justify_between">
-                              {/* <a href="/index.html" className=""></a> */}
                               <Link to="/" className="ques_btn quit_btn">Quit Game</Link>
-                              {/* For Next Ques - TODO */}
-                              {/* <a href="/ques-result/ques/ques2.html" className="ques_btn next_btn">Next Question</a> */}
-
-                              {/* For View Results - TODO */}
-                              {/* <a href="/result" className="ques_btn next_btn">View Results</a> */}
+                              {/* For Next Ques and View Results - TODO */}
                               <Link to="/result" className="ques_btn next_btn">View Results</Link>
                         </div>
                   </div>
