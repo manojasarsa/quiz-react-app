@@ -14,25 +14,7 @@ export const Header = () => {
                                     <i className="fas fa-user-circle profile"></i>
                               </a>
 
-                              {/* TODO */}
-
-                              {/* <div className="profile_box profile_menu flex_col">
-                                    <div className="profile_options">
-                                          <ul className="menu flex flex_col flex_justify_center flex_align_start">
-                                          <div className="flex flex_row flex_justify_around flex_align_center">
-                                                <h3>New to Quizzically?</h3>
-                                                <a className="btn btn_primary" href="/">Sign Up</a>
-                                          </div>
-                                          <a className="menu_link" href="/" ><li className="profile_content">Your Profile</li> </a>
-                                          <a className="menu_link" href="/"><li className="profile_content">Quiz Board</li> </a>
-                                          <a className="menu_link" href="/"><li className="profile_content">Create Quiz</li> </a>
-                                          <a className="menu_link" href="/"><li className="profile_content modal_btn_live" id="modal_btn_live" >Share Quiz</li> </a>
-                                          <a className="menu_link" href="/"> <li className="profile_content">Play with others</li></a>
-                                          <a className="menu_link" href="/"><li className="profile_content">Forgot Password</li> </a>
-                                          <a className="menu_link" href="/"><li className="profile_content">Logout</li> </a>
-                                          </ul>
-                                    </div>
-                              </div> */}
+                              {/* TODO - Profile Options*/}
 
                               <Link className="btn btn_primary-outlined" to="/signin">
                                     Login
