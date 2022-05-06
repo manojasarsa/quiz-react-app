@@ -6,4 +6,3 @@ export { Rules } from "../pages/Rules/Rules";
 export { Signin } from "../pages/Auth/Signin";
 export { Signup } from "../pages/Auth/Signup";
 export { Question } from "../pages/Question/Question";
-
