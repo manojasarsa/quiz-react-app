@@ -129,7 +129,7 @@ export const Result = () => {
                     </label>
                 </form>
 
-                <div className="ques_btn_box flex flex_justify_center">
+                <div className="ques_btn_box result_btn_box flex flex_justify_center">
                     <Link to="/" className="ques_btn next_btn">PLAY MORE</Link>
                 </div>
 

@@ -37,12 +37,12 @@
     transition: all 0.4s ease-in-out;
 }
 
-/* .rules_btn_box .back:hover {
-      color: var(--red-color);
-      transition: var(--trans-4);
-  }
+.rules_btn_box .back:hover {
+    color: var(--red-color);
+    transition: var(--trans-4);
+}
   
-  .rules_btn_box .start:hover {
-      color: var(--blue-color);
-      transition: var(--trans-2);
-  } */
+.rules_btn_box .start:hover {
+    color: var(--blue-color);
+    transition: var(--trans-2);
+}
