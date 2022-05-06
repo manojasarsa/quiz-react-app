@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./categorycard.css";
 
-export const CategoryCard = (props) => {
+export const CategoryCard = () => {
       return (
             <div className="card_image">
                   <div className="card_vertical">
