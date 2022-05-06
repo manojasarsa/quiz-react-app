@@ -1,0 +1,50 @@
+import { Header } from "../../components";
+import { Link } from "react-router-dom";
+import "./auth.css";
+
+export const Signin = () => {
+    return (
+        <div className="body">
+            
+            <Header />
+
+            <div className="input_container flex flex_col">
+                <form className="input_field flex flex_col">
+                    <h2 className="input_heading">Login</h2>
+                    <label className="input_label">Email address</label>
+                    <input className="input_box" type="email" placeholder="manoj@neog.camp" required />
+                    <label className="input_label">Password</label>
+                    <input className="input_box" type="name" placeholder="***********" required />
+                    <div className="inp_checkbox flex flex_justify_start flex_align_center">
+                        <input type="checkbox" className="input_checkbox"></input>
+                        <p className="checkbox_notify">Remember me</p>
+                    </div>
+                    <p className="input_subheading">
+                        <Link id="input_subheading" to="/forgotpwd">Forgot your Password?</Link>
+                    </p>
+                    <button className="btn btn_primary">Login</button>
+                    <p className="input_subheading">
+                        <Link to="/signup" id="input_subheading">Create New Account {'>'} </Link>
+                    </p>
+                </form>
+            </div>
+
+            {/* <!-- Share Quiz --> */}
+
+            <div className="modal_box flex_justify_center flex_align_center" id="modal_box">
+                <div className="modal flex flex_col flex_justify_center flex_align_center">
+
+                    <h3>Use the below link to share quiz :</h3>
+                    <div className="timer_box">
+                        <span className="timer">https://quizzically.com/admin/quiz/60d407de2740d9bf0 <span className="timeleft"> Copy Link</span></span>
+                    </div>
+
+                    <div className="modal_btn_container">
+                        <button className="btn btn_primary modal_btn_close" id="modal_btn_close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
