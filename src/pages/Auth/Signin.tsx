@@ -25,7 +25,7 @@ export const Signin = () => {
                     </p>
                     <button className="btn btn_primary">Login</button>
                     <p className="input_subheading">
-                        <Link id="input_subheading" to="/signup">Create New Account {'>'} </Link>
+                        <Link to="/signup" id="input_subheading">Create New Account {'>'} </Link>
                         {/* <a href="/auth/signup.html" id="input_subheading">Create New Account {'>'} </a> */}
                     </p>
                 </form>

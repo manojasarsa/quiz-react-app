@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import { Header } from "../../components";
 import "./auth.css";
 
 export const Signout = () => {
       return (
-            <div>
-                  
+            <div>   
                   <Header />
 
                   <main className="logout_container flex flex_align_center flex_justify_center">
@@ -12,7 +12,8 @@ export const Signout = () => {
                               <i className="fas fa-circle-check icon fa-2x"></i>
                               <p className="logout_text">You are signed out now :(</p>
                               <p className="logout_text">Come back soon!</p>
-                              <a className="link" href="/">Back to Home</a>
+                              <Link className="link" to="/signup">Back to Home</Link>
+                              {/* <a className="link" href="/">Back to Home</a> */}
                         </div>
                   </main>
 

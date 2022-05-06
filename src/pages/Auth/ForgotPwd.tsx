@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import { Header } from "../../components";
 import "./auth.css";
 
 export const ForgotPwd = () => {
       return (
-            <div>
-                  
+            <div className="body">
                   <Header />
 
                   <div className="input_container flex flex_col">
@@ -15,7 +15,10 @@ export const ForgotPwd = () => {
                      
                         <button className="btn btn_primary">Send Login Link</button>
                         <p className="input_subheading">OR</p>
-                        <p className="input_subheading"><a href="/auth/signup.html" id="input_subheading">Create New Account {'>'} </a></p>
+                        <p className="input_subheading">
+                              <Link id="input_subheading" to="/signup">Create New Account {'>'} </Link>
+                              {/* <a href="/auth/signup.html" id="input_subheading">Create New Account {'>'} </a> */}
+                        </p>
                         </form>
                   </div>
 
