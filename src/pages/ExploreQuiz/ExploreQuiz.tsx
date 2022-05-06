@@ -1,6 +1,5 @@
 import "./explorequiz.css";
 import { Header, QuizCard } from "../../components";
-import { Link } from "react-router-dom";
 
 export const ExploreQuiz = () => {
       return (
