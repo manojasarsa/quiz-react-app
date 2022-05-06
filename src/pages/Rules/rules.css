@@ -5,16 +5,10 @@
 
 .rules_container .rules_box {
     row-gap: 4rem;
-    /* border-radius: 3rem; */
     background-color: var(--info-background-color);
     backdrop-filter: blur(4px);
     border: 1px solid var(--primary-color);
 }
-
-/* .rules_box:hover {
-      opacity: 1;
-      transform: scale(1.09); 
-  }  */
 
 .rules_list {
     row-gap: 1.5rem;

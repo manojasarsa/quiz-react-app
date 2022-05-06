@@ -6,11 +6,6 @@
     box-shadow: none;
 }
 
-/* .input_container:hover {
-    opacity: 1;
-    transform: scale(1.10);
-} */
-
 #input_subheading {
     color: var(--primary-color);
     font-size: 0.9rem;
@@ -51,7 +46,3 @@
     color: var(--secondary-color);
     font-size: 1.5rem;
 }
-
-/* .logout_box .link:hover {
-    color: var(--blue-color);
-} */

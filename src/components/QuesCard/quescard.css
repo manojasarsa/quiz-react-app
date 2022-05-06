@@ -1,7 +1,6 @@
 .main_contain {
     height: 100vh;
     width: 100vw;
-    /* display: flex; */
     margin: 0 auto;
 }
 
@@ -19,8 +18,6 @@
 }
 
 .ques_score_box {
-    /* display: flex;
-    justify-content: space-between; */
     padding: 1rem 0;
     font-weight: var(--fw-semi-bold);
     font-size: 1.5rem;
@@ -30,11 +27,6 @@
     padding: 1rem 0;
     font-weight: var(--fw-semi-bold);
 }
-
-/* .options {
-    justify-content: center;
-    align-items: center;
-} */
 
 .options label {
     width: 100%;
