@@ -10,9 +10,9 @@ export const Header = () => {
                         </div>
                         <div className="nav_right flex flex_justify_between flex_align_center">
 
-                              <a className="badge_container badge_icon">
+                              {/* <a className="badge_container badge_icon">
                                     <i className="fas fa-user-circle profile"></i>
-                              </a>
+                              </a> */}
 
                               {/* TODO - Profile Options*/}
 
