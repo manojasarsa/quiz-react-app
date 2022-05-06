@@ -25,7 +25,7 @@ export const Home = () => {
                                                       Take the action-packed Sports quiz and Get ready to play!
                                                 </p>
 
-                                                <Link className="play_btn" to="/rules">Explore Quiz</Link>
+                                                <Link className="play_btn" to="/explorequiz">Explore Quiz</Link>
                                           </div>
                                     </div>
                               </div>
@@ -43,7 +43,7 @@ export const Home = () => {
                                                       Take the action-packed Web Dev quiz and Get ready to play!
                                                 </p>
 
-                                                <Link className="play_btn" to="/rules">Explore Quiz</Link>
+                                                <Link className="play_btn" to="/explorequiz">Explore Quiz</Link>
                                           </div>
                                     </div>
                               </div>
