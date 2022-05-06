@@ -1,4 +1,5 @@
 import "./rules.css";
+import { Link } from "react-router-dom";
 
 export const Rules = () => {
       return (
@@ -20,8 +21,8 @@ export const Rules = () => {
                   </div>
 
                   <div className="rules_btn_box flex flex_justify_around">
-                        <a href="/index.html" className="rules_btn back">Go Back</a>
-                        <a href="/ques-result/ques/ques1.html" className="rules_btn start">Start Quiz</a>
+                        <Link className="rules_btn back" to="/">Go Back</Link>
+                        <Link className="rules_btn start" to="/question">Start Quiz</Link>
                   </div>
             </div>
       )
