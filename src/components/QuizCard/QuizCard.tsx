@@ -15,7 +15,7 @@ export const QuizCard = () => {
                                           Take the action-packed Sports quiz and Get ready to play!
                                     </p>
 
-                                    <Link className="play_btn" to="/explorequiz">Explore Quiz</Link>
+                                    <Link className="play_btn" to="/rules">Play Now</Link>
                               </div>
                         </div>
                   </div>

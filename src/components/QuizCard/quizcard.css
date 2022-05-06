@@ -12,7 +12,7 @@
 }
 
 .quiz_card_container .card_vertical .adjust_image {
-      height: 30vh;
+      height: 40vh;
       object-fit: contain;
       border-radius: 1.5rem;
 }
