@@ -1,79 +1,73 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { auth } from "../../firebase.config";
+import { onAuthStateChanged } from "firebase/auth";
+import { AuthActionType, AuthContextType, AuthStateType, ReactChildrenType } from "../types";
 
-import {
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      onAuthStateChanged,
-      signOut,
-} from "firebase/auth";
-
-// TYPES
-
-type AuthUser = {
-      email: string
-      password: string
-      // setCurrentUser: React.Dispatch<React.SetStateAction<AuthUser | null>>
-}
-
-type UserContextProviderProps = {
-      children: React.ReactNode
-}
-
-// type UserContextType = {
-//       currentUser: AuthUser | null
-//       signup: () => {}
-//       signin: () => {}
-//       signout: () => {}
-//       // setCurrentUser: React.Dispatch<React.SetStateAction<AuthUser | null>>
-// }
-
-//          -- Main Code --
-
-// const AuthContext = createContext<UserContextType | null>({
-//       currentUser: null,
-//       signup: () => Promise,
-//       signin: () => Promise,
-//       signout: () => Promise,
-// });
-
-export const AuthProvider = ({children}: UserContextProviderProps) => {
-
-      const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
-
-      // useEffect(() => {
-      //       const unsubscribe = onAuthStateChanged(auth, (user) => {
-      //             setCurrentUser(user);
-      //       })
-
-      //       return () => {
-      //             unsubscribe();
-      //       }
-      // }, []);
-
-      const signup = (props: AuthUser) => {
-            return createUserWithEmailAndPassword(auth, props.email, props.password);
+const initialAuthState = {
+      error: false,
+      loading: false,
+      userInfo: {
+            email: "",
+            token: ""
       }
-      const signin = (props: AuthUser) => {
-            return signInWithEmailAndPassword(auth, props.email, props.password);
-      }
-      const signout = () => {
-            return signOut(auth);
-      }
+};  
 
-      // const value = {
-      //       currentUser
-      //       // signup,
-      //       // signin,
-      //       // signout,
-      // };
+const AuthContext = createContext({} as AuthContextType);
+
+const authReducer = (state: AuthStateType, action: AuthActionType) => {
+
+      switch(action.type) {
+
+            case "INITIALIZE": 
+                  return { ...state, error: false, loading: true };
+
+            case "SIGN_IN":
+                  return { ...state, 
+                        error: false,
+                        loading: false,
+                        userInfo: {
+                              email: action.payload.email,
+                              token: action.payload.token
+                        }
+                  };
+
+            case "SIGN_OUT":
+                  return { ...state, 
+                        error: false,
+                        loading: false,
+                        userInfo: {
+                              email: "",
+                              token: ""
+                        }
+                  };
+
+            case "SET_ERROR":
+                  return { ...state, error: true, loading: false };
+            
+            default: 
+                  return state;
+      };
+};
+
+export const AuthProvider = ({children}: ReactChildrenType) => {
+
+      const [ authState, authDispatch ] = useReducer(authReducer, initialAuthState);
+
+      useEffect(() => {
+            onAuthStateChanged(auth, (user) => {
+                  if(user) {
+                        authDispatch({type: "SIGN_IN", payload: { email: user.email, token: user.uid}})
+                  } else {
+                        authDispatch({type: "SIGN_OUT"});
+                  }
+            })
+      }, [authDispatch])
 
       return (
-            // <AuthContext.Provider value={{currentUser, signout, signin, signup}}>
-            //       {children}
-            // </AuthContext.Provider>
-            <div></div>
+            <AuthContext.Provider value={{ authState, authDispatch }}>
+                  {children}
+            </AuthContext.Provider>
       );
 }
 
-// export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => useContext(AuthContext);
