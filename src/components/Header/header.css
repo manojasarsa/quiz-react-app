@@ -54,3 +54,8 @@ header .nav_right span {
 #header_box {
       border: 0;
 }
+
+.logout_btn {
+      padding: 0 1.5rem;
+      color: var(--primary-color);
+}
