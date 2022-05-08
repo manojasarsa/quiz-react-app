@@ -1,9 +1,11 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { auth } from "../firebase.config";
-import { onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { AuthContextType, ReactChildrenType, ServicesType } from "../types";
 import { authReducer } from "../reducers/authReducer";
 import { signInService, signOutService, signUpService } from "../services/authService";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const initialAuthState = {
       error: false,
@@ -13,6 +15,8 @@ const initialAuthState = {
             token: ""
       }
 };  
+
+const navigate = useNavigate();
 
 const AuthContext = createContext({} as AuthContextType);
 
@@ -30,31 +34,49 @@ export const AuthProvider = ({children}: ReactChildrenType) => {
             })
       }, [authDispatch])
 
-      const signUpHandler = async ( { email, password} :ServicesType) => {
+      const signUpHandler = async ( { email, password, firstName, lastName } : { email: string; password: string; firstName: string; lastName: string }) => {
             authDispatch({type: "INITIALIZE"});
             try {
                   const response = await signUpService({email, password});
-                  console.log(response)
+                  const user = response.user;
+                  if(user) {
+                        navigate("/");
+                        toast.success("Account Created!");
+                        await createUser(user, { firstName, lastName });
+                  }
             }
-            catch(error: any) {
+            catch(err: any) {
                   authDispatch({type: "SET_ERROR"});
+                  toast.error(err.message);
             }
       }
       
-      const signInHandler = async ( {email, password} :ServicesType) => {
+      const signInHandler = async ( {email, password} :ServicesType, from: { pathname: string }) => {
             authDispatch({type: "INITIALIZE"});
             try {
                   const response = await signInService({email, password});
-                  console.log(response)
+                  const user = response.user;
+                  if(user) {
+                        navigate(from);
+                        toast.success("Login successfully!")
+                  }
             }
-            catch(error: any) {
+            catch(err: any) {
                   authDispatch({type: "SET_ERROR"});
+                  toast.error(err.message);
             }
       }
       
       const signOutHandler = () => {
-            authDispatch({type: "SIGN_OUT"});
-            signOutService();
+            try {
+                  signOutService();
+                  navigate("/");
+                  toast.success("Signed out!");
+            }
+            catch(err: any) {
+                  authDispatch({type: "SET_ERROR"});
+                  toast.error(err.message);
+            }
       }
 
       return (
