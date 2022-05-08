@@ -5,10 +5,14 @@ import { db } from "../firebase.config";
 import { signUpService, signInService, signOutService } from "../services/authService";
 import { ServicesType } from "../types";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { useAuth } from "../contexts/authContext";
 
 const navigate = useNavigate();
 
-const signUpHandler = async ( { email, password, firstName, lastName } : { email: string; password: string; firstName: string; lastName: string }) => {
+const { authDispatch, authState } = useAuth();
+
+export const signUpHandler = async ( { email, password, firstName, lastName } : { email: string; password: string; firstName: string; lastName: string }) => {
       authDispatch({type: "INITIALIZE"});
       try {
             const response = await signUpService({email, password});
@@ -25,7 +29,7 @@ const signUpHandler = async ( { email, password, firstName, lastName } : { email
       }
 }
 
-const signInHandler = async ( {email, password} :ServicesType, from: { pathname: string }) => {
+export const signInHandler = async ( {email, password} :ServicesType, from: { pathname: string }) => {
       authDispatch({type: "INITIALIZE"});
       try {
             const response = await signInService({email, password});
@@ -41,7 +45,7 @@ const signInHandler = async ( {email, password} :ServicesType, from: { pathname:
       }
 }
 
-const signOutHandler = () => {
+export const signOutHandler = () => {
       try {
             signOutService();
             navigate("/");
@@ -68,8 +72,4 @@ const createUser = async (user: User, userData: {firstName: string, lastName: st
       catch(err) {
             console.error(err);
       }
-}
-
-function authDispatch(arg0: { type: string; }) {
-      throw new Error("Function not implemented.");
 }

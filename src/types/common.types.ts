@@ -5,3 +5,9 @@ type ReactChildrenType = {
 };
 
 export type { ReactChildrenType };
+
+export type locationType = {
+      from: {
+            pathname: string
+      }
+}

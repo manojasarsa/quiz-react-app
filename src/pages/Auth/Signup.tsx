@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./auth.css";
 import { getAuth } from "firebase/auth";
+import { signUpHandler } from "../../utils/authMethods";
 
 export const Signup = () => {
 
@@ -11,8 +12,6 @@ export const Signup = () => {
       const [termsAndCondition, setTermsAndCondition] = useState(true);
       const [showHideOne, setShowHideOne] = useState(false);
       const [showHideTwo, setShowHideTwo] = useState(false);
-
-      //     const { signup } = useAuth();
 
       const signUpInputs = {
             firstName: "",
@@ -33,7 +32,7 @@ export const Signup = () => {
             // e.preventDefault();
             if (firstName && lastName && email && password && confirmPassword) {
                   if (formInputs.password === formInputs.confirmPassword) {
-                        signUpHandler({ email, password })
+                        signUpHandler({ email, password, firstName, lastName });
                   }
                   else {
                         setError("Password does not match!");
@@ -52,7 +51,6 @@ export const Signup = () => {
       }
 
       const toggleTermsCondition = () => termsAndCondition ? setTermsAndCondition(false) : setTermsAndCondition(true);
-
 
       return (
             <>
@@ -153,8 +151,4 @@ export const Signup = () => {
                   </div>
             </>
       )
-}
-
-function signUpHandler(arg0: { email: string; password: string; }) {
-      throw new Error("Function not implemented.");
 }

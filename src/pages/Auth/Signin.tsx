@@ -1,11 +1,11 @@
 import { Header } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./auth.css";
 import { useState } from "react";
+import { signInHandler } from "../../utils/authMethods";
+import { locationType } from "../../types/common.types";
 
 export const Signin = () => {
-
-    // const { login } = useAuth();
 
     const loginInputs = {
         email: "",
@@ -19,9 +19,15 @@ export const Signin = () => {
 
     const { email, password } = formInputs;
 
+    const location = useLocation();
+
+    const { from } = (location.state as locationType) || {
+        from :  { pathname: "/" }
+    }
+
     const formHandler = () => {
-        // e.preventDefault();
-        // login({email, password, setError, setErrorState});   
+        // e.preventDefault(); 
+        signInHandler({ email, password }, from);
     }
     
     return (
