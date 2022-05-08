@@ -1,8 +1,8 @@
 import { Header } from "../../components";
 import { Link, useLocation } from "react-router-dom";
 import "./auth.css";
-import { useState } from "react";
-import { signInHandler } from "../../utils/authMethods";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../utils/authMethods";
 import { locationType } from "../../types/common.types";
 
 export const Signin = () => {
@@ -13,8 +13,8 @@ export const Signin = () => {
     }
 
     const [ formInputs, setFormInputs ] = useState(loginInputs);
-    const [error, setError] = useState("");
-    const [errorState, setErrorState] = useState(false);
+    // const [error, setError] = useState("");
+    // const [errorState, setErrorState] = useState(false);
     const [showHide, setShowHide] = useState(false);
 
     const { email, password } = formInputs;
@@ -25,10 +25,15 @@ export const Signin = () => {
         from :  { pathname: "/" }
     }
 
+    const { signInHandler, authState } = useAuth();
+
     const formHandler = () => {
-        // e.preventDefault(); 
         signInHandler({ email, password }, from);
     }
+
+    // useEffect(() => {
+
+    // })
     
     return (
         <div className="body">
@@ -85,9 +90,9 @@ export const Signin = () => {
                 </form>
             </div>
 
-            {errorState && <div className="alert_error toast flex flex_justify_center flex_align_center toast_box toast_active_leading toast_position">
+            {/* {errorState && <div className="alert_error toast flex flex_justify_center flex_align_center toast_box toast_active_leading toast_position">
                 <span> {error} </span>
-            </div> }
+            </div> } */}
 
             {/* <!-- Share Quiz --> */}
 

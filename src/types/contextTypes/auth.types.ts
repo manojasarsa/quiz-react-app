@@ -31,6 +31,6 @@ type OtherActionType = {
 
 type AuthActionType = SignInActionType | OtherActionType
 
-type AuthDispatchType = (action: AuthActionType) => void;
+// type AuthDispatchType = (action: AuthActionType) => void;
 
-export type { AuthStateType, AuthContextType, ServicesType, AuthActionType, AuthDispatchType }
+export type { AuthStateType, AuthContextType, ServicesType, AuthActionType }

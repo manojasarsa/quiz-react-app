@@ -2,12 +2,9 @@ import { Header } from "../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./auth.css";
-import { getAuth } from "firebase/auth";
-import { signUpHandler } from "../../utils/authMethods";
+import { useAuth } from "../../utils/authMethods";
 
 export const Signup = () => {
-
-      const auth = getAuth();
 
       const [termsAndCondition, setTermsAndCondition] = useState(true);
       const [showHideOne, setShowHideOne] = useState(false);
@@ -28,8 +25,10 @@ export const Signup = () => {
 
       const { firstName, lastName, email, password, confirmPassword } = formInputs;
 
-      const formHandler = () => {
-            // e.preventDefault();
+      const { signUpHandler, authState } = useAuth();
+
+      const formHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            e.preventDefault();
             if (firstName && lastName && email && password && confirmPassword) {
                   if (formInputs.password === formInputs.confirmPassword) {
                         signUpHandler({ email, password, firstName, lastName });
@@ -138,7 +137,7 @@ export const Signup = () => {
                                           <p className="checkbox_notify">I accept all Terms & Conditions</p>
                                     </div>
 
-                                    <button className="auth_btn" onClick={() => formHandler()} >Sign Up</button>
+                                    <button className="auth_btn" onClick={(e) => formHandler(e)} >Sign Up</button>
 
                                     <p className="input_subheading"><Link id="input_subheading" to="/signin">Already have an account {">"} </Link></p>
 
