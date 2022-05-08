@@ -1,7 +1,9 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
-import { auth } from "../../firebase.config";
+import { auth } from "../firebase.config";
 import { onAuthStateChanged } from "firebase/auth";
-import { AuthActionType, AuthContextType, AuthStateType, ReactChildrenType } from "../types";
+import { AuthContextType, ReactChildrenType, ServicesType } from "../types";
+import { authReducer } from "../reducers/authReducer";
+import { signInService, signOutService, signUpService } from "../services/authService";
 
 const initialAuthState = {
       error: false,
@@ -13,41 +15,6 @@ const initialAuthState = {
 };  
 
 const AuthContext = createContext({} as AuthContextType);
-
-const authReducer = (state: AuthStateType, action: AuthActionType) => {
-
-      switch(action.type) {
-
-            case "INITIALIZE": 
-                  return { ...state, error: false, loading: true };
-
-            case "SIGN_IN":
-                  return { ...state, 
-                        error: false,
-                        loading: false,
-                        userInfo: {
-                              email: action.payload.email,
-                              token: action.payload.token
-                        }
-                  };
-
-            case "SIGN_OUT":
-                  return { ...state, 
-                        error: false,
-                        loading: false,
-                        userInfo: {
-                              email: "",
-                              token: ""
-                        }
-                  };
-
-            case "SET_ERROR":
-                  return { ...state, error: true, loading: false };
-            
-            default: 
-                  return state;
-      };
-};
 
 export const AuthProvider = ({children}: ReactChildrenType) => {
 
@@ -62,6 +29,33 @@ export const AuthProvider = ({children}: ReactChildrenType) => {
                   }
             })
       }, [authDispatch])
+
+      const signUpHandler = async ( { email, password} :ServicesType) => {
+            authDispatch({type: "INITIALIZE"});
+            try {
+                  const response = await signUpService({email, password});
+                  console.log(response)
+            }
+            catch(error: any) {
+                  authDispatch({type: "SET_ERROR"});
+            }
+      }
+      
+      const signInHandler = async ( {email, password} :ServicesType) => {
+            authDispatch({type: "INITIALIZE"});
+            try {
+                  const response = await signInService({email, password});
+                  console.log(response)
+            }
+            catch(error: any) {
+                  authDispatch({type: "SET_ERROR"});
+            }
+      }
+      
+      const signOutHandler = () => {
+            authDispatch({type: "SIGN_OUT"});
+            signOutService();
+      }
 
       return (
             <AuthContext.Provider value={{ authState, authDispatch }}>

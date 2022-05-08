@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "../../firebase.config";
+import { auth } from "../firebase.config";
 import { ServicesType } from "../types";
 
 const signUpService = ({email, password}: ServicesType) => {
