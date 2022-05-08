@@ -12,15 +12,6 @@ const app = initializeApp({
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
 
-// const app = initializeApp({
-//     apiKey: "AIzaSyBw84TVafcXAGPFepSQReWX7Bx2wM2b_qA",
-//     authDomain: "quiz-react-app-34841.firebaseapp.com",
-//     projectId: "quiz-react-app-34841",
-//     storageBucket: "quiz-react-app-34841.appspot.com",
-//     messagingSenderId: "45829296750",
-//     appId: "1:45829296750:web:4216ba59453240e0718c7f"
-//   });
-
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);

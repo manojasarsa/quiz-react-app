@@ -1,7 +1,7 @@
 import { Header } from "../../components";
 import { Link, useLocation } from "react-router-dom";
 import "./auth.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../utils/authMethods";
 import { locationType } from "../../types/common.types";
 
@@ -25,15 +25,12 @@ export const Signin = () => {
         from :  { pathname: "/" }
     }
 
-    const { signInHandler, authState } = useAuth();
+    const { signInHandler } = useAuth();
 
-    const formHandler = () => {
+    const formHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
         signInHandler({ email, password }, from);
     }
-
-    // useEffect(() => {
-
-    // })
     
     return (
         <div className="body">
@@ -81,7 +78,7 @@ export const Signin = () => {
                         <p className="checkbox_notify">Remember me</p>
                     </div>
 
-                    <button className="auth_btn" onClick={() => formHandler()} >Login</button>
+                    <button className="auth_btn" onClick={(e) => formHandler(e)} >Login</button>
 
                     <p className="forgot_pwd_box"><Link className="forgot_pwd" to="/forgotpwd">Forgot your Password?</Link> </p>
 
