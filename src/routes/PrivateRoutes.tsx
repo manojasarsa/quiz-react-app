@@ -1,14 +1,18 @@
 // import { useAuth } from "../contexts/authContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../utils/authMethods";
 
-type PrivateRoutesTypes = {
-      children: React.ReactNode
-}
+const PrivateRoutes = () => {
 
-const PrivateRoutes = ({children}: PrivateRoutesTypes) => {
-    // const { state } = useAuth();
+    const location = useLocation();
 
-    // return state.isAuth ? children : <Navigate to="/login" replace />;
+    const { 
+        authState: {
+            userInfo: { token }
+        } 
+    } = useAuth();
+
+    return token ? <Outlet /> : <Navigate to="/signin" state={{ from: location }} replace />;
 }
 
 export {PrivateRoutes};

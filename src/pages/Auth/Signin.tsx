@@ -13,8 +13,11 @@ export const Signin = () => {
     }
 
     const [ formInputs, setFormInputs ] = useState(loginInputs);
+
+    // TODO --
     // const [error, setError] = useState("");
     // const [errorState, setErrorState] = useState(false);
+
     const [showHide, setShowHide] = useState(false);
 
     const { email, password } = formInputs;
@@ -86,6 +89,8 @@ export const Signin = () => {
 
                 </form>
             </div>
+
+            {/* TODO */}
 
             {/* {errorState && <div className="alert_error toast flex flex_justify_center flex_align_center toast_box toast_active_leading toast_position">
                 <span> {error} </span>

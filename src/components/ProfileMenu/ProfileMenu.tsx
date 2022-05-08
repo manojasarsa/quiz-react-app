@@ -4,8 +4,9 @@ import "./profilemenu.css";
 
 export const ProfileMenu = () => {
 
-      const { signOutHandler, authState } = useAuth();
-      const token = authState.userInfo.token;
+      const { signOutHandler, authState: {
+            userInfo: { token }
+      } } = useAuth();
 
       return (
             <div className="profile_box profile_menu flex_col">
