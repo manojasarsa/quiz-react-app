@@ -1,10 +1,8 @@
 import { Header } from "../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./auth.css";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { signUpService } from "../../services/authService";
+import { getAuth } from "firebase/auth";
 
 export const Signup = () => {
 
@@ -35,7 +33,7 @@ export const Signup = () => {
             // e.preventDefault();
             if (firstName && lastName && email && password && confirmPassword) {
                   if (formInputs.password === formInputs.confirmPassword) {
-                        signUpService({ email, password })
+                        signUpHandler({ email, password })
                   }
                   else {
                         setError("Password does not match!");
@@ -155,4 +153,8 @@ export const Signup = () => {
                   </div>
             </>
       )
+}
+
+function signUpHandler(arg0: { email: string; password: string; }) {
+      throw new Error("Function not implemented.");
 }
