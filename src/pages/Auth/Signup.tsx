@@ -25,7 +25,7 @@ export const Signup = () => {
 
       const { firstName, lastName, email, password, confirmPassword } = formInputs;
 
-      const { signUpHandler, authState } = useAuth();
+      const { signUpHandler } = useAuth();
 
       const formHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             e.preventDefault();
