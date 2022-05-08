@@ -53,28 +53,3 @@
 .quick_links .menu_link {
     font-size: 1.2rem;
 }
-
-/* Profile menu */
-.profile_menu {
-    padding: 1rem;
-    position: absolute;
-    top: 5rem;
-    right: 3rem;
-    background-color: var(--info-background-color);
-    display: none;
-    z-index: 5;
-}
-
-.display_profile {
-    display: flex;
-}
-
-.menu {
-    gap: 1rem;
-    font-size: 0.8rem;
-}
-
-.menu .menu_link {
-    color: var(--primary-color);
-    font-weight: var(--fw-bold);
-}

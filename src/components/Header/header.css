@@ -7,13 +7,15 @@
 }
 
 header .header_logo {
-      color: var(--secondary-color);
+      color: var(--black-color);
       font-size: 1.5rem;
+      padding-left: 0.3rem;
 }
 
 header .tagline {
       font-family: 'Marck Script', cursive;
-      color: rgb(163, 89, 66);
+      color: var(--light-grey-color);
+      padding: 0.2rem 0 0 1rem;
 }
 
 header .search {

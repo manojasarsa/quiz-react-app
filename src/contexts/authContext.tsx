@@ -1,6 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
-import { auth } from "../firebase.config";
-import { onAuthStateChanged } from "firebase/auth";
+import { createContext, useReducer } from "react";
 import { AuthContextType, ReactChildrenType } from "../types";
 import { authReducer } from "../reducers/authReducer";
 
@@ -25,5 +23,3 @@ export const AuthProvider = ({children}: ReactChildrenType) => {
             </AuthContext.Provider>
       );
 }
-
-// export const useAuth = () => useContext(AuthContext);
