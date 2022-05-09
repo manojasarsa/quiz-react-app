@@ -15,7 +15,7 @@ header .header_logo {
 header .tagline {
       font-family: 'Marck Script', cursive;
       color: var(--light-grey-color);
-      padding: 0.2rem 0 0 1rem;
+      padding: 0.2rem 0 0 0.5rem;
 }
 
 header .search {

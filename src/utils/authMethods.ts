@@ -71,7 +71,6 @@ const useAuth = () => {
       
       const createUser = async (user: User, userData: {firstName: string, lastName: string }) => {
             let currentUserRef = doc(db, `users/${user.uid}`);
-      
             try {
                   const snapShot = await getDoc(currentUserRef);
                   if(!snapShot.exists()) {
