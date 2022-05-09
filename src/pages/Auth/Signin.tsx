@@ -30,9 +30,15 @@ export const Signin = () => {
 
     const { signInHandler } = useAuth();
 
-    const formHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const formSignIn = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         signInHandler({ email, password }, from);
+    }
+    
+    const formGuestSignIn = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+        setFormInputs({ email: "testuser@gmail.com", password: "testuser@123" })
+        signInHandler({ email, password } , from);
     }
     
     return (
@@ -81,7 +87,9 @@ export const Signin = () => {
                         <p className="checkbox_notify">Remember me</p>
                     </div>
 
-                    <button className="auth_btn" onClick={(e) => formHandler(e)} >Login</button>
+                    <button className="auth_btn" onClick={(e) => formSignIn(e)} >Login</button>
+
+                    <button className="auth_btn" onClick={(e) => formGuestSignIn(e)} >Guest Login</button>
 
                     <p className="forgot_pwd_box"><Link className="forgot_pwd" to="/forgotpwd">Forgot your Password?</Link> </p>
 

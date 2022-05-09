@@ -41,7 +41,7 @@ const useAuth = () => {
             }
       }
       
-      const signInHandler = async ( {email, password} :ServicesType, from: { pathname: string }) => {
+      const signInHandler = async ( {email, password} : ServicesType, from: { pathname: string }) => {
             authDispatch({type: "INITIALIZE"});
             try {
                   const response = await signInService({email, password});
