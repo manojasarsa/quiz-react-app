@@ -4,6 +4,29 @@ import { quizReducer } from "../reducers/authReducer";
 
 export const QuizContext = createContext({} as QuizContextType);
 
+const quizReducer = (state, action) => {
+      switch(action.type) {
+
+            case "INITIALIZE" : 
+                  return { ...state, loading: true, error: false };
+
+            case "SET_QUIZ" :
+                  return {
+                        ...state,
+                        loading: false,
+                        error: false,
+                        categories: action.payload.categories,
+                        quizzes: action.payload.quizzes
+                  };
+
+            case "SET_ERROR" : 
+                  return { ...state, loading: false, error: true };
+
+            default:
+                  return state;
+      }
+};
+
 export const AuthProvider = ({children}: ReactChildrenType) => {
 
       const initialQuizState = {
