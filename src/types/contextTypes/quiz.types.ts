@@ -1,3 +1,5 @@
+// type for STATE properties of reducer
+
 type QuizStateType = {
       error: boolean
       loading: boolean
@@ -5,23 +7,16 @@ type QuizStateType = {
       quizzes: string[]
 }
 
+// types for ACTION properties reducer
+
+
+
+// state and dispatch types of useReducer()
+
 type QuizContextType = {
-      authState: AuthStateType
-      authDispatch: React.Dispatch<AuthActionType>
+      authState: QuizStateType
+      authDispatch: React.Dispatch<QuizActionType>
 };
 
-type GameContextType = {
-      authState: AuthStateType
-      authDispatch: React.Dispatch<AuthActionType>
-};
 
-type GameStateType = {
-      error: boolean
-      loading: boolean
-      questions: {}[]
-      currentQuesIndex: number
-      selectedOptions: []
-      quizTitle: string
-}
-
-export type { QuizContextType, GameContextType, QuizStateType, GameStateType };
+export type { QuizContextType, QuizStateType, QuizActionType };

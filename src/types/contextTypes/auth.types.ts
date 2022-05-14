@@ -1,3 +1,16 @@
+// type for STATE properties of reducer
+
+type AuthStateType = {
+      error: boolean
+      loading: boolean
+      userInfo: {
+            email: string
+            token: string
+      }
+};
+
+// types for ACTION properties reducer
+
 type SignInActionType = {
       type: "SIGN_IN" 
       payload: {
@@ -10,16 +23,10 @@ type OtherActionType = {
       type: "INITIALIZE" | "SET_ERROR" | "SIGN_OUT"
 };
 
-type AuthStateType = {
-      error: boolean
-      loading: boolean
-      userInfo: {
-            email: string
-            token: string
-      }
-};
 
 type AuthActionType = SignInActionType | OtherActionType
+
+// state and dispatch types of useReducer()
 
 type AuthContextType = {
       authState: AuthStateType
