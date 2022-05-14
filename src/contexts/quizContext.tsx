@@ -1,10 +1,10 @@
 import { createContext, useReducer } from "react";
-import { QuizContextType, ReactChildrenType } from "../types";
-import { quizReducer } from "../reducers/authReducer";
+import { QuizContextType, QuizStateType, ReactChildrenType } from "../types";
+import { QuizActionType } from "../types/contextTypes/quiz.types";
 
 export const QuizContext = createContext({} as QuizContextType);
 
-const quizReducer = (state, action) => {
+const quizReducer = (state: QuizStateType, action: QuizActionType) => {
       switch(action.type) {
 
             case "INITIALIZE" : 

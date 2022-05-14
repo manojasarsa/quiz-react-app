@@ -9,7 +9,19 @@ type QuizStateType = {
 
 // types for ACTION properties reducer
 
+type SetQuizType = {
+      type: "SET_QUIZ" 
+      payload: {
+            categories: string[]
+            quizzes: string[]
+      }
+};
 
+type OtherActionType = {
+      type: "INITIALIZE" | "SET_ERROR"
+};
+
+type QuizActionType = SetQuizType | OtherActionType
 
 // state and dispatch types of useReducer()
 
