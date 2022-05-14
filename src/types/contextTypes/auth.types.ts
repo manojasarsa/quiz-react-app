@@ -1,22 +1,3 @@
-type AuthStateType = {
-      error: boolean
-      loading: boolean
-      userInfo: {
-            email: string
-            token: string
-      }
-};
-
-type AuthContextType = {
-      authState: AuthStateType
-      authDispatch: React.Dispatch<AuthActionType>
-};
-
-type ServicesType = {
-      email: string
-      password: string
-};
-
 type SignInActionType = {
       type: "SIGN_IN" 
       payload: {
@@ -29,6 +10,20 @@ type OtherActionType = {
       type: "INITIALIZE" | "SET_ERROR" | "SIGN_OUT"
 };
 
+type AuthStateType = {
+      error: boolean
+      loading: boolean
+      userInfo: {
+            email: string
+            token: string
+      }
+};
+
 type AuthActionType = SignInActionType | OtherActionType
 
-export type { AuthStateType, AuthContextType, ServicesType, AuthActionType }
+type AuthContextType = {
+      authState: AuthStateType
+      authDispatch: React.Dispatch<AuthActionType>
+};
+
+export type { AuthStateType, AuthContextType, AuthActionType };
