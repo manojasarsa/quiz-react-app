@@ -5,8 +5,8 @@ import { DocumentData } from "firebase/firestore";
 type QuizStateType = {
     error: boolean
     loading: boolean
-    categories: DocumentData
     quizzes: DocumentData
+    categories: DocumentData
 }
 
 // types for ACTION properties reducer
@@ -14,8 +14,8 @@ type QuizStateType = {
 type SetQuizType = {
     type: "SET_QUIZ"
     payload: {
-        categories: DocumentData
         quizzes: DocumentData
+        categories: DocumentData
     }
 };
 
