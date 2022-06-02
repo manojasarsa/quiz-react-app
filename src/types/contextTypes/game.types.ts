@@ -1,15 +1,17 @@
-type GameContextType = {
-      authState: AuthStateType
-      authDispatch: React.Dispatch<AuthActionType>
-};
+// type GameContextType = {
+//       authState: GameStateType
+//       authDispatch: React.Dispatch<GameActionType>
+// };
 
-type GameStateType = {
-      error: boolean
-      loading: boolean
-      questions: {}[]
-      currentQuesIndex: number
-      selectedOptions: []
-      quizTitle: string
-}
+export {};
 
-export type { GameContextType, GameStateType };
+// type GameStateType = {
+//       error: boolean
+//       loading: boolean
+//       questions: {}[]
+//       currentQuesIndex: number
+//       selectedOptions: []
+//       quizTitle: stringm
+// }
+
+// export type { GameContextType, GameStateType };
