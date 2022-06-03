@@ -1,32 +1,9 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { QuizContextType, QuizStateType, ReactChildrenType } from "../types";
-import { QuizActionType } from "../types/contextTypes/quiz.types";
+import { quizReducer } from "../reducers/quizReducer";
+import { QuizContextType, ReactChildrenType } from "../types";
 import { getCategories, getQuizzes } from "../utils/fireBaseMethods";
 
 const QuizContext = createContext({} as QuizContextType);
-
-const quizReducer = (state: QuizStateType, action: QuizActionType) => {
-    switch (action.type) {
-
-        case "INITIALIZE":
-            return { ...state, loading: true, error: false };
-
-        case "SET_QUIZ":
-            return {
-                ...state,
-                loading: false,
-                error: false,
-                quizzes: action.payload.quizzes,
-                categories: action.payload.categories,
-            };
-
-        case "SET_ERROR":
-            return { ...state, loading: false, error: true };
-
-        default:
-            return state;
-    }
-};
 
 const QuizProvider = ({ children }: ReactChildrenType) => {
 
@@ -43,7 +20,6 @@ const QuizProvider = ({ children }: ReactChildrenType) => {
             }
         })();
     }, []);
-
 
     const initialQuizState = {
         error: false,
