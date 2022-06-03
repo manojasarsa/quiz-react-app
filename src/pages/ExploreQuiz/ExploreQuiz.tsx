@@ -1,20 +1,38 @@
 import "./explorequiz.css";
 import { Header, QuizCard } from "../../components";
+import { useQuiz } from "../../contexts/quizContext";
+import { useParams } from "react-router-dom";
+import { DocumentData } from "firebase/firestore";
 
 export const ExploreQuiz = () => {
-      return (
-            <div className="explore-quiz">
-                  <Header />
 
-                  <h1 className="top_heading">Category Name</h1>
-                  <span className="top_subhead">Description...</span>
+    const { quizState: { quizzes }} = useQuiz();
 
-                  <div className="categories flex flex_wrap flex_justify_center flex_align_center">
+    const { categoryName } = useParams();
 
-                        <QuizCard />
-                        <QuizCard />
+    // console.log("quizzzess:", quizzes);
 
-                  </div>
+    return (
+        <div className="explore-quiz">
+            <Header />
+
+            <h1 className="top_heading">{categoryName}</h1>
+            <span className="top_subhead">Description...</span>
+
+            <div className="categories flex flex_wrap flex_justify_center flex_align_center">
+
+                <QuizCard />
+                <QuizCard />
+
+                {quizzes.map((quiz: DocumentData) => {
+                    <QuizCard 
+                        key={quiz.id}
+                        quizCategory={quiz.quizCategory}
+                        quizImg={quiz.quizImg}
+                        quizName={quiz.quizName}
+                })}
+
             </div>
-      )
+        </div>
+    )
 }

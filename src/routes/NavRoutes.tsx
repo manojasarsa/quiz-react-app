@@ -14,7 +14,9 @@ export const NavRoutes = () => {
       return (
             <Routes>
                   <Route path="/" element = { <Home/> }></Route>
-                  <Route path="/explorequiz" element = { <ExploreQuiz/> }></Route>
+                  <Route path="/quizzes/:categoryName" element = { <ExploreQuiz/> }></Route>
+                  <Route path="/quizzes" element = { <ExploreQuiz/> }></Route>
+                  <Route path="/rules/:quizId" element = { <Rules/> } />
 
                   {token ? (
                         <>
@@ -30,7 +32,6 @@ export const NavRoutes = () => {
 
                   <Route element = { <PrivateRoutes /> }>
                         <Route path="/profile" element = { <Profile/> } />
-                        <Route path="/rules" element = { <Rules/> } />
                         <Route path="/result" element = { <Result/> } />
                         <Route path="/question" element = { <Question/> } />
                   </Route>

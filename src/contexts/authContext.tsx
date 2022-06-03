@@ -2,9 +2,9 @@ import { createContext, useReducer } from "react";
 import { AuthContextType, ReactChildrenType } from "../types";
 import { authReducer } from "../reducers/authReducer";
 
-export const AuthContext = createContext({} as AuthContextType);
+const AuthContext = createContext({} as AuthContextType);
 
-export const AuthProvider = ({ children }: ReactChildrenType) => {
+const AuthProvider = ({ children }: ReactChildrenType) => {
 
     const initialAuthState = {
         error: false,
@@ -21,5 +21,7 @@ export const AuthProvider = ({ children }: ReactChildrenType) => {
         <AuthContext.Provider value={{ authState, authDispatch }}>
             {children}
         </AuthContext.Provider>
-    );
-}
+    )
+};
+
+export { AuthContext, AuthProvider };

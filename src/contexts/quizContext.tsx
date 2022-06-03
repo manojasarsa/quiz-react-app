@@ -1,9 +1,9 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { QuizContextType, QuizStateType, ReactChildrenType } from "../types";
 import { QuizActionType } from "../types/contextTypes/quiz.types";
 import { getCategories, getQuizzes } from "../utils/fireBaseMethods";
 
-export const QuizContext = createContext({} as QuizContextType);
+const QuizContext = createContext({} as QuizContextType);
 
 const quizReducer = (state: QuizStateType, action: QuizActionType) => {
     switch (action.type) {
@@ -28,7 +28,7 @@ const quizReducer = (state: QuizStateType, action: QuizActionType) => {
     }
 };
 
-export const QuizProvider = ({ children }: ReactChildrenType) => {
+const QuizProvider = ({ children }: ReactChildrenType) => {
 
     useEffect(() => {
         ( async () => {
@@ -44,6 +44,7 @@ export const QuizProvider = ({ children }: ReactChildrenType) => {
         })();
     }, []);
 
+
     const initialQuizState = {
         error: false,
         loading: false,
@@ -57,5 +58,9 @@ export const QuizProvider = ({ children }: ReactChildrenType) => {
         <QuizContext.Provider value={{ quizState, quizDispatch }}>
             {children}
         </QuizContext.Provider>
-    );
+    )
 };
+
+const useQuiz = () => useContext(QuizContext);
+
+export { QuizContext, QuizProvider, useQuiz };
