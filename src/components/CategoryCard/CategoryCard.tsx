@@ -31,7 +31,7 @@ type CategoryCardType = {
 
 // console.log("allCat => ", allCategories);
 
-export const CategoryCard = ({ id, title, redirectTo, categoryImg, isCategoryCard }: CategoryCardType) => {
+export const CategoryCard = ({ title, redirectTo, categoryImg, isCategoryCard }: CategoryCardType) => {
 
       return (
             <div className="card_image">
