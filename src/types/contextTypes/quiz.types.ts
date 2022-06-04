@@ -1,6 +1,6 @@
 import { DocumentData } from "firebase/firestore";
 
-// type for STATE properties of reducer
+// type for STATE properties of reducer function (initialState)
 
 type QuizStateType = {
     error: boolean
