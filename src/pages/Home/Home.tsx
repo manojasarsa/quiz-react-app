@@ -10,8 +10,6 @@ export const Home = () => {
 
     const { quizState: { categories } } = useQuiz();
 
-    // console.log("categories:", categories);
-
     return (
         <div className="body">
 
