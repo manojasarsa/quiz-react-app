@@ -18,7 +18,7 @@ export const Home = () => {
             <Header />
 
             <h1 className="top_heading">Quizzically</h1>
-            <span className="top_subhead">Unlock Knowledge At The Speed Of Thought...</span>
+            <span className="top_subhead">UNLOCK KNOWLEDGE AT THE SPEED OF THOUGHT</span>
 
             <div className="categories flex flex_wrap flex_justify_center flex_align_center">
                 {categories?.map((el: DocumentData) => (
