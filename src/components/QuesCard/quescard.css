@@ -13,7 +13,7 @@
 }
 
 .ques_heading {
-    text-align: start;
+    text-align: center;
     margin: 1rem 0;
 }
 
@@ -44,15 +44,15 @@
     display: none;
 }
 
-.allOptions {
+.all_options {
     background-color: #0b090a;
 }
 
-.allOptions:hover {
+.all_options:hover {
     background-color: var(--primary-color);
 }
 
-.chosenOption {
+.chosen_option {
     background-color: var(--prim-bg-color);
 }
 
@@ -67,6 +67,10 @@
     border: 0;
     background-color: transparent;
     cursor: pointer;
+}
+
+.cta_btn:hover {
+    color: var(--blue-color);
 }
 
 .quit_btn {

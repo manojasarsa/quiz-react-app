@@ -49,7 +49,7 @@ export const QuesCard = () => {
                 <form className="options flex flex_col flex_justify_center flex_align_center">
                     {questions[currentQuesIndex]?.options.map((option: string, index: number) => (
                         <label 
-                            className={(selectedOptionIndex === index ? "chosenOption" : "allOptions")}
+                            className={(selectedOptionIndex === index ? "chosen_option" : "all_options")}
                             key={index} 
                             onClick={() => setSelectedOptionIndex(index)}>
                             <input 
@@ -59,11 +59,6 @@ export const QuesCard = () => {
                 </form>
 
                 <div className="ques_btn_box flex flex_justify_between">
-
-                    {/* TO QUIT BUTTON */}
-                    {/* <Link to="/" className="ques_btn quit_btn">Quit Game</Link> */}
-
-                    {/* PREV */}
                     
                     <button 
                         disabled={currentQuesIndex === 0}
@@ -74,9 +69,7 @@ export const QuesCard = () => {
                     }} >
                         {"<"} Prev
                     </button>
-                    
 
-                    {/* VIEW RESULTS */}
                     {currentQuesIndex + 1 === questions.length ?
                         ( <button className="cta_btn" onClick={() => {
                             setOption(selectedOptionIndex);
