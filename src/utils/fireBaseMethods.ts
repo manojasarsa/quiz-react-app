@@ -23,7 +23,7 @@ const getQuizzes = async () => {
         const quizzes: DocumentData = response.docs.map((el) => {
             return { ...el.data(), id: el.id };
         });
-
+        // console.log("quizzess -> ", quizzes);
         return quizzes;
     } catch (err) {
         console.error(err);
@@ -31,4 +31,20 @@ const getQuizzes = async () => {
     }
 };
 
-export { getCategories, getQuizzes };
+const getQuiz = async (quizId: string) => {
+    console.log("hi")
+    try {
+        const quizRef = collection(db, `quizzes/${quizId}/questions`);
+        const res = await getDocs(quizRef);
+        const quiz: DocumentData = res.docs.map((el) => {
+            return { ...el.data(), id: el.id };
+        });
+        console.log("QuizQues ->", quiz);
+        return quiz;
+    } catch (err) {
+        console.log(err);
+        throw Error("Unable to fetch quiz questions");
+    }
+};
+
+export { getCategories, getQuizzes, getQuiz };

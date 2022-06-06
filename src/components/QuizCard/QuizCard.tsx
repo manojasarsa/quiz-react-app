@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useGame } from "../../hooks/useGame";
 import "./quizcard.css";
 
 type QuizCardType = {
@@ -9,9 +10,11 @@ type QuizCardType = {
     quizName: string
 }
 
-export const QuizCard = ({ quizCategory, quizImg, quizName, redirectTo }: QuizCardType) => {
+export const QuizCard = ({ id, quizCategory, quizImg, quizName, redirectTo }: QuizCardType) => {
 
-    console.log("quiz ->>", quizCategory, quizImg, quizName, redirectTo);
+    // console.log("quiz ->>", quizCategory, quizImg, quizName, redirectTo);
+
+    const { getQuestions } = useGame();
 
     return (
         <div className="card_image quiz_card_container">
@@ -26,7 +29,7 @@ export const QuizCard = ({ quizCategory, quizImg, quizName, redirectTo }: QuizCa
                             Take the action-packed Sports quiz and Get ready to play!
                         </p>
 
-                        <Link className="play_btn" to={redirectTo}>Play Now</Link>
+                        <Link className="play_btn" to={redirectTo} onClick={() => getQuestions(id, quizName) }>Play Now</Link>
                     </div>
                 </div>
             </div>

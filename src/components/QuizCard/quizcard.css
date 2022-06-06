@@ -1,40 +1,40 @@
 .quiz_card_container .card_vertical_info {
-      margin-bottom: 2rem;
-      border-radius: 1.5rem;
-      background-color: var(--primary-color);
+    margin-bottom: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--primary-color);
 }
 
 .quiz_card_container .card_vertical .card_vertical_info:hover {
-      opacity: 1;
-      transform: scale(0.96);
+    opacity: 1;
+    transform: scale(0.96);
 }
 
 .quiz_card_container .card_vertical .adjust_image {
-      height: 40vh;
-      object-fit: contain;
-      border-radius: 1.5rem;
+    height: 40vh;
+    object-fit: contain;
+    border-radius: 1.5rem;
 }
 
 .quiz_card_container .card_title {
-      margin: 0.3rem 0;
-      color: var(--white-color);
+    margin: 0.3rem 0;
+    color: var(--white-color);
 }
 
 .quiz_card_container .card_subtitle {
-      font-size: 0.9rem;
-      color: var(--grey-color);
-      font-weight: var(--fw-semi-bold);
+    font-size: 0.9rem;
+    color: var(--grey-color);
+    font-weight: var(--fw-semi-bold);
 }
 
 .quiz_card_container .play_btn {
-      font-size: 1.2rem;
-      font-weight: var(--fw-bold);
-      margin: 0.5rem 0;
-      letter-spacing: 1.2;
-      color: var(--red-color);
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    margin: 0.5rem 0;
+    letter-spacing: 1.2;
+    color: var(--red-color);
 }
 
 .quiz_card_container .play_btn:hover {
-      letter-spacing: 0.2rem;
-      transition: var(--trans-5);
+    letter-spacing: 0.2rem;
+    transition: var(--trans-5);
 }

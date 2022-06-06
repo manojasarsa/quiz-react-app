@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useGame } from "../../hooks/useGame";
 import "./result.css";
 
 export const Result = () => {
+
+    const { resetQuiz, resetSelections } = useGame();
     return (
         <div className="main_contain">
             <div className="ques_container flex flex_col">
@@ -130,7 +133,10 @@ export const Result = () => {
                 </form>
 
                 <div className="ques_btn_box result_btn_box flex flex_justify_center">
-                    <Link to="/" className="ques_btn next_btn">PLAY MORE</Link>
+                    <Link to="/" className="ques_btn next_btn" onClick={() => {
+                        resetQuiz();
+                        resetSelections();
+                    }}>PLAY MORE</Link>
                 </div>
 
             </div>
