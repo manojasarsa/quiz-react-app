@@ -77,7 +77,7 @@ const useAuth = () => {
             if (!snapShot.exists()) {
                 const { firstName, lastName } = userData;
                 await setDoc(currentUserRef, {
-                    email: user.email, firstName, lastName
+                    email: user.email, firstName, lastName, totalScore: 0
                 });
             }
         }

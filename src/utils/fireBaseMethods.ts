@@ -47,4 +47,19 @@ const getQuiz = async (quizId: string) => {
     }
 };
 
-export { getCategories, getQuizzes, getQuiz };
+const updateScore = async (userId: string, currentScore: number) => {
+    try {
+        const userRef = doc(db, `users/${userId}`);
+        const userDocs = await getDoc(userRef);
+        if (userDocs.exists()) {
+            const { finalScore } = userDocs.data();
+            await updateDoc(userRef, {
+                finalScore: finalScore + currentScore
+            })
+        } 
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+export { getCategories, getQuizzes, getQuiz, updateScore };

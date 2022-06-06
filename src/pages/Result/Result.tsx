@@ -1,7 +1,10 @@
 import { DocumentData } from "firebase/firestore";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ResultCard } from "../../components";
 import { useGame } from "../../hooks/useGame";
+import { useAuth } from "../../utils/authMethods";
+import { updateScore } from "../../utils/fireBaseMethods";
 import "./result.css";
 
 export const Result = () => {
@@ -12,12 +15,27 @@ export const Result = () => {
 
     const navigate = useNavigate();
 
+    const { authState: { userInfo: { token }}} = useAuth();
+
+    const finalScore = questions.reduce( 
+        (acc: number, curr: number, index: number) => 
+            questions[index].ansIndex === selectedOptions[index] ? acc + 10 : acc, 0
+    );
+
+    console.log("finalScore ->", finalScore);
+
+    useEffect(() => {
+        (async() => {
+            await updateScore(token, finalScore);
+        })()
+    });
+
     return (
         <div className="main_contain">
             <div className="ques_container flex flex_col">
 
                 <h1 className="ques_heading">Results</h1>
-                <h1 className="ques_heading">Final Score: 20/50</h1>
+                <h1 className="ques_heading">Final Score: {finalScore}/{questions.length * 10}</h1>
 
                 {questions.map((quesData: DocumentData, index: number) => (
                     <ResultCard
