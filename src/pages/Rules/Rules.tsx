@@ -1,7 +1,6 @@
 import "./rules.css";
 import { Link } from "react-router-dom";
 import { Header } from "../../components";
-// import { useEffect } from "react";
 
 export const Rules = () => {
     return (
@@ -29,4 +28,4 @@ export const Rules = () => {
         </div>
         </div>
     )
-}
+};

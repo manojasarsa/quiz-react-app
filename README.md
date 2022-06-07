@@ -16,12 +16,9 @@ In Quizzically, you will find:
 
 ### `Quit Quiz`
 
-### `User Profile Page`
 ### `Result Page`
 
 - It has Answers and Score
-
-### `Loading and Alerts`
 
 ### `Authentication with FIREBASE (persistent)`
 

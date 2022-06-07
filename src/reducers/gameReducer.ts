@@ -3,10 +3,10 @@ import { GameStateType, GameActionType } from "../types/contextTypes/game.types"
 export const gameReducer = (state: GameStateType, action: GameActionType) => {
     switch (action.type) {
         case "INITIALIZE":
-            return { 
-                ...state, 
-                error: false, 
-                loading: true 
+            return {
+                ...state,
+                error: false,
+                loading: true
             };
 
         case "NEXT_QUES":
@@ -15,7 +15,7 @@ export const gameReducer = (state: GameStateType, action: GameActionType) => {
                 loading: false,
                 currentQuesIndex: state.currentQuesIndex + 1
             };
-    
+
         case "PREV_QUES":
             return {
                 ...state,

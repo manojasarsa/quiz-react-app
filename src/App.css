@@ -7,9 +7,6 @@
 body {
     color: var(--prim-txt-color);
     background-color: var(--prim-bg-color);
-    /* background-color: #2b2d42; */
-    /* background-color: #00171F; */
-    /* background-color: #000814; */
 }
 
 * {

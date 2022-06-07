@@ -12,8 +12,6 @@ type QuizCardType = {
 
 export const QuizCard = ({ id, quizCategory, quizImg, quizName, redirectTo }: QuizCardType) => {
 
-    // console.log("quiz ->>", quizCategory, quizImg, quizName, redirectTo);
-
     const { getQuestions } = useGame();
 
     return (

@@ -1,6 +1,5 @@
 import "./header.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useAuth } from "../../utils/authMethods";
 
 export const Header = () => {

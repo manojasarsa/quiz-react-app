@@ -7,22 +7,21 @@ import { useEffect, useState } from "react";
 
 export const ExploreQuiz = () => {
 
-    const { quizState: { quizzes }} = useQuiz();
+    const { quizState: { quizzes } } = useQuiz();
 
     const { categoryName } = useParams();
-
-    console.log("quizzzess:", quizzes);
+    
     const [allQuizzes, setAllQuizzes] = useState(quizzes);
 
     useEffect(() => {
         let res = quizzes.slice();
-        if(categoryName) {
+        if (categoryName) {
             res = res.filter(
                 (quiz: { quizCategory: string }) => quiz.quizCategory === categoryName
             )
         }
         setAllQuizzes(res);
-    },[categoryName, quizzes])
+    }, [categoryName, quizzes])
 
     return (
         <div className="explore-quiz">
@@ -33,7 +32,7 @@ export const ExploreQuiz = () => {
             <div className="categories flex flex_wrap flex_justify_center flex_align_center">
 
                 {allQuizzes.map((quiz: DocumentData) => {
-                    return <QuizCard 
+                    return <QuizCard
                         key={quiz.id}
                         id={quiz.id}
                         quizCategory={quiz.quizCategory}
@@ -46,4 +45,4 @@ export const ExploreQuiz = () => {
             </div>
         </div>
     )
-}
+};

@@ -1,3 +1,4 @@
+import "./result.css";
 import { DocumentData } from "firebase/firestore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -5,13 +6,12 @@ import { ResultCard } from "../../components";
 import { useGame } from "../../hooks/useGame";
 import { useAuth } from "../../utils/authMethods";
 import { updateScore } from "../../utils/fireBaseMethods";
-import "./result.css";
 
 export const Result = () => {
 
     const { resetQuiz, resetSelections, gameState } = useGame();
 
-    const { questions, currentQuesIndex, selectedOptions } = gameState;
+    const { questions, selectedOptions } = gameState;
 
     const navigate = useNavigate();
 
@@ -21,8 +21,6 @@ export const Result = () => {
         (acc: number, curr: number, index: number) => 
             questions[index].ansIndex === selectedOptions[index] ? acc + 10 : acc, 0
     );
-
-    console.log("finalScore ->", finalScore);
 
     useEffect(() => {
         (async() => {
@@ -61,4 +59,4 @@ export const Result = () => {
             </div>
         </div>
     )
-}
+};

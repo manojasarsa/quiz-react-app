@@ -1,10 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { GameContext } from "../../contexts/gameContext";
-// import { useGame } from "../../contexts/gameContext";
-import { useQuiz } from "../../contexts/quizContext";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGame } from "../../hooks/useGame";
-// import { useGameMethod } from "../../utils/gameMethods";
 import "./quescard.css";
 
 export const QuesCard = () => {

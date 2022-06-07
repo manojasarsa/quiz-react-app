@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { GameContext } from "../contexts/gameContext";
-// import { useGame } from "../contexts/gameContext";
 import { getQuiz } from "../utils/fireBaseMethods";
 
 export const useGame = () => {
@@ -15,8 +14,6 @@ export const useGame = () => {
                 type: "SET_QUIZ",
                 payload: { questions: quiz, quizName }
             })
-
-            console.log("QUIZ QUES COntext: ", quiz);
         } catch (err) {
             gameDispatch({ type: "SET_ERROR"});
             console.log(err);
@@ -49,4 +46,4 @@ export const useGame = () => {
     return {
         getQuestions, getNextQues, getPrevQues, setOption, resetQuiz, resetSelections, gameState
     }
-}
+};

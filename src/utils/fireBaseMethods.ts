@@ -1,8 +1,5 @@
-import { doc, getDoc, setDoc, getDocs, DocumentData, collection, updateDoc, addDoc } from "firebase/firestore";
-import { User } from "firebase/auth";
-
+import { doc, getDoc, getDocs, DocumentData, collection, updateDoc } from "firebase/firestore";
 import { categoriesRef, db, quizzesRef } from "../firebase.config";
-import { async } from "@firebase/util";
 
 const getCategories = async () => {
     try {
@@ -23,7 +20,6 @@ const getQuizzes = async () => {
         const quizzes: DocumentData = response.docs.map((el) => {
             return { ...el.data(), id: el.id };
         });
-        // console.log("quizzess -> ", quizzes);
         return quizzes;
     } catch (err) {
         console.error(err);
@@ -32,14 +28,12 @@ const getQuizzes = async () => {
 };
 
 const getQuiz = async (quizId: string) => {
-    console.log("hi")
     try {
         const quizRef = collection(db, `quizzes/${quizId}/questions`);
         const res = await getDocs(quizRef);
         const quiz: DocumentData = res.docs.map((el) => {
             return { ...el.data(), id: el.id };
         });
-        console.log("QuizQues ->", quiz);
         return quiz;
     } catch (err) {
         console.log(err);
