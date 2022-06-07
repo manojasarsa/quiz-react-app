@@ -1,5 +1,5 @@
 .main_contain {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     margin: 0 auto;
 }
@@ -139,4 +139,14 @@
     padding: 0.3rem 0.8rem;
     background-color: var(--prim-bg-color);
     color: var(--prim-text-color);
+}
+
+@media only screen and (max-width: 720px) {
+    .ques_container {
+        width: 80vw;
+    }
+    .timer_modal_content {
+        width: 10rem;
+        height: 10rem;
+    }
 }

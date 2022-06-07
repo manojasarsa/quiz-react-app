@@ -28,8 +28,7 @@ export const ExploreQuiz = () => {
         <div className="explore-quiz">
             <Header />
 
-            <h1 className="top_heading">{categoryName}</h1>
-            <span className="top_subhead">Description...</span>
+            <h1 className="top_heading">{categoryName?.slice().toUpperCase()}</h1>
 
             <div className="categories flex flex_wrap flex_justify_center flex_align_center">
 

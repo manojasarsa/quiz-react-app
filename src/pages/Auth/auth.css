@@ -14,7 +14,7 @@
 }
 
 .input_field .input_heading {
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     text-align: center;
     letter-spacing: 0.1rem;
     color: var(--cta-color);
@@ -24,7 +24,6 @@
     font-size: 0.9rem;
     padding: 0.2rem 0;
     letter-spacing: 0.05rem;
-    font-weight: 300;
     font-weight: var(--fw-bold);
     color: var(--prim-text-color);
 }
@@ -164,4 +163,23 @@ input.input_checkbox {
 .input_container .toast {
     display: flex;
     background-color: var(--cta-sec-color);
+}
+
+@media only screen and (max-width: 720px) {
+    #auth_container {
+        margin-top: 10rem;
+        width: 60vw;
+    }
+    .input_field .input_heading {
+        font-size: 2rem;
+    }
+    .input_label {
+        font-size: 1.2rem;
+    }
+    .auth_btn {
+        font-size: 1.2rem;
+    }
+    #input_subheading {
+        font-size: 1.2rem;
+    }
 }

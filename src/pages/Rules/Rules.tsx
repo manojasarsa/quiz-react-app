@@ -1,9 +1,13 @@
 import "./rules.css";
 import { Link } from "react-router-dom";
+import { Header } from "../../components";
 // import { useEffect } from "react";
 
 export const Rules = () => {
     return (
+
+        <div>
+            <Header />
         <div className="rules_container flex flex_col flex_justify_start flex_align_center">
 
             <h1 className="top_heading">QUIZ RULES</h1>
@@ -22,6 +26,7 @@ export const Rules = () => {
                 <Link className="rules_btn back" to="/">Go Back</Link>
                 <Link className="rules_btn start" to="/question">Start Quiz</Link>
             </div>
+        </div>
         </div>
     )
 }
