@@ -137,7 +137,7 @@ export const Signup = () => {
                                           <p className="checkbox_notify">I accept all Terms & Conditions</p>
                                     </div>
 
-                                    <button className="auth_btn" onClick={(e) => formHandler(e)} >Sign Up</button>
+                                    <button className="auth_btn login_button" onClick={(e) => formHandler(e)} >Sign Up</button>
 
                                     <p className="input_subheading"><Link id="input_subheading" to="/signin">Already have an account {">"} </Link></p>
 

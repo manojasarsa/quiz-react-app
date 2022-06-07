@@ -79,19 +79,9 @@ export const Signin = () => {
 
                     </label>
 
-                    <div className="inp_checkbox flex flex_justify_start flex_align_center">
-                        <input 
-                            type="checkbox" 
-                            className="input_checkbox"
-                        /> 
-                        <p className="checkbox_notify">Remember me</p>
-                    </div>
-
-                    <button className="auth_btn" onClick={(e) => formSignIn(e)} >Login</button>
+                    <button className="auth_btn login_button" onClick={(e) => formSignIn(e)} >Login</button>
 
                     <button className="auth_btn" onClick={(e) => formGuestSignIn(e)} >Guest Login</button>
-
-                    <p className="forgot_pwd_box"><Link className="forgot_pwd" to="/forgotpwd">Forgot your Password?</Link> </p>
 
                     <p className="input_subheading"><Link id="input_subheading" to="/signup"> Sign Up Now</Link> </p>
 
