@@ -48,20 +48,7 @@ export const QuesCard = () => {
         };
     }, [seconds, minutes]);
 
-    return (
-        <div className="flex">
-            {showModal && <div className="timer_modal flex flex_justify_center flex_align_center">
-                    <div className="timer_modal_content flex flex_col flex_justify_center flex_align_center">
-                        <p>Times Up</p>
-                        <button className="" onClick={() => {
-                            setOption(selectedOptionIndex);
-                            navigate("/result", { replace: true });
-                        }} >
-                            View Results
-                        </button>
-                    </div>
-            </div>}
-        
+    return (        
         <div className="main_contain flex flex_row">
             <div className="ques_container flex flex_col">
 
@@ -73,6 +60,18 @@ export const QuesCard = () => {
                             {seconds < 10 ? "0" + seconds : seconds}
                         </span>
                 </div>
+
+                {showModal && <div className="timer_modal flex flex_justify_center flex_align_center">
+                    <div className="timer_modal_content flex flex_col flex_justify_center flex_align_center">
+                        <h2>Times Up!</h2>
+                        <button className="timer_btn" onClick={() => {
+                            setOption(selectedOptionIndex);
+                            navigate("/result", { replace: true });
+                        }} >
+                            View Results
+                        </button>
+                    </div>
+                </div>}
 
                 <div className="ques_score_box flex flex_justify_between">
                     <p className="ques_num">Question: {currentQuesIndex + 1}/{questions.length}</p>
@@ -130,7 +129,6 @@ export const QuesCard = () => {
 
                 </div>
             </div>
-        </div>
         </div>
     )
 };

@@ -1,6 +1,6 @@
 import { DocumentData } from "firebase/firestore";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ResultCard } from "../../components";
 import { useGame } from "../../hooks/useGame";
 import { useAuth } from "../../utils/authMethods";
