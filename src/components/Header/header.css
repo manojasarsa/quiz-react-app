@@ -18,18 +18,6 @@ header .tagline {
     padding: 0.2rem 0 0 1rem;
 }
 
-/* header .search {
-    margin-left: 1rem;
-    font-size: 0.8rem;
-    width: 100%;
-    padding: 0.5rem 0.6rem;
-    border-radius: 0;
-    border: none;
-    background-color: transparent;
-    color: #00A8E8;
-    border: 1px solid var(--primary-color);
-} */
-
 .header .nav_right {
     flex-basis: 10%;
 }
@@ -49,6 +37,14 @@ header .nav_right span {
     height: 1.5rem;
     min-width: 1.5rem;
     top: -1rem;
+}
+
+header .nav_right .login_btn {
+    color: var(--prim-text-color);
+    margin-right: 0.5rem;
+    border: 1px solid var(--cta-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
 }
 
 #header_box {

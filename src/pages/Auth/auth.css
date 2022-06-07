@@ -133,7 +133,8 @@ input.input_checkbox {
     width: 40rem;
     height: 20rem;
     margin: 2rem auto;
-    box-shadow: 1px 1px 1px 3px var(--grey-color);
+    backdrop-filter: blur(4px);
+    border: 3mm ridge  var(--cta-color);
 }
 
 .logout_text {
@@ -142,8 +143,12 @@ input.input_checkbox {
 
 .logout_box .link {
     margin-top: 0.5rem;
-    color: var(--primary-color);
+    color: var(--prim-text-color);
     font-weight: bolder;
+}
+
+.logout_box .link:hover {
+    color: var(--cta-color);
 }
 
 .input_container .toast {

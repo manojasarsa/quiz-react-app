@@ -1,4 +1,4 @@
-import { Home, ExploreQuiz, Profile, Question, Result, Rules, Signin, Signup, Signout } from "../pages";
+import { Home, ExploreQuiz, Question, Result, Rules, Signin, Signup, Signout } from "../pages";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "../utils/authMethods";
 import { PrivateRoutes } from "./PrivateRoutes";
@@ -31,7 +31,6 @@ export const NavRoutes = () => {
                   )}
 
                   <Route element = { <PrivateRoutes /> }>
-                        <Route path="/profile" element = { <Profile/> } />
                         <Route path="/result" element = { <Result/> } />
                         <Route path="/question" element = { <Question/> } />
                   </Route>
