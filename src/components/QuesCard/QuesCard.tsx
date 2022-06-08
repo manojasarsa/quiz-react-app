@@ -71,7 +71,7 @@ export const QuesCard = () => {
 
                 <div className="ques_score_box flex flex_justify_between">
                     <p className="ques_num">Question: {currentQuesIndex + 1}/{questions.length}</p>
-                    <button className="cta_btn quit_btn" onClick={() => {
+                    <button className="quit_btn" onClick={() => {
                         resetQuiz();
                         resetSelections();
                         navigate("/", { replace: true });

@@ -22,7 +22,7 @@ export const Rules = () => {
             </div>
 
             <div className="rules_btn_box flex flex_justify_around">
-                <Link className="rules_btn back" to="/">Go Back</Link>
+                <Link className="rules_btn back" to="/">Quit</Link>
                 <Link className="rules_btn start" to="/question">Start Quiz</Link>
             </div>
         </div>
