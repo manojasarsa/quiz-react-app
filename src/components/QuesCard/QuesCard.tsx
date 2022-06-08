@@ -13,7 +13,7 @@ export const QuesCard = () => {
 
     const [showModal, setShowModal] = useState(false);
 
-    const { resetQuiz, resetSelections, getQuestions, getNextQues, getPrevQues, setOption, gameState } = useGame();
+    const { resetQuiz, resetSelections, getNextQues, getPrevQues, setOption, gameState } = useGame();
 
     const { questions, currentQuesIndex, selectedOptions } = gameState;
 
