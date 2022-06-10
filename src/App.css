@@ -1,0 +1,14 @@
+:root {
+    --prim-bg-color: #1b263b;
+    --prim-txt-color: #edf2f4;
+    --cta-color: #00A8E8;
+}
+
+body {
+    color: var(--prim-txt-color);
+    background-color: var(--prim-bg-color);
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}

@@ -3,27 +3,27 @@
     margin-top: 2rem;
     padding-bottom: 1rem;
     box-shadow: none;
-    background-color: var(--info-background-color);
+    border: 2px solid var(--cta-color);
+    border-radius: 5px;
 }
 
 .input_field {
     margin: 0 2rem;
 }
 
-.input_heading {
-    margin: 1.5rem 0;
-    text-align: start;
+.input_field .input_heading {
+    margin: 2rem 0;
+    text-align: center;
     letter-spacing: 0.1rem;
-    color: var(--black-color);
+    color: var(--cta-color);
 }
 
 .input_label {
     font-size: 0.9rem;
     padding: 0.2rem 0;
     letter-spacing: 0.05rem;
-    font-weight: 300;
     font-weight: var(--fw-bold);
-    color: var(--black-color);
+    color: var(--prim-text-color);
 }
 
 .input_field .form_label {
@@ -38,7 +38,8 @@
     border-radius: 0;
     color: var(--black-color);
     background-color: var(--prim-color);
-    border: 1px solid var(--shadow-color);
+    border: 1px solid var(--cta-color);
+    border-radius: 3px;
 }
 
 .inp_checkbox {
@@ -64,8 +65,14 @@ input.input_checkbox {
 	padding: 0.4rem 1rem;
 	letter-spacing: 0.2rem;
 	color: var(--black-color);
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--cta-color);
 	background-color: var(--cta-sec-color);
+    border-radius: 3px;
+}
+
+.login_button {
+    background-color: var(--cta-color);
+    color: var(--white-color);
 }
 
 .forgot_pwd_box {
@@ -83,6 +90,7 @@ input.input_checkbox {
     text-align: center;
     font-size: 0.8rem;
     align-self: center;
+    color: var(--cta-color);
 }
 
 #input_subheading {
@@ -102,9 +110,8 @@ input.input_checkbox {
 .input_field .input_label .show_hide_btn {
     position: absolute;
     font-size: 0.9rem;
-    right: 0.5rem;
-    bottom: 4rems;
-    top: 60%;
+    right: 0.4rem;
+    top: 65%;
     cursor: pointer;
     color: var(--black-color);
 }
@@ -133,7 +140,8 @@ input.input_checkbox {
     width: 40rem;
     height: 20rem;
     margin: 2rem auto;
-    box-shadow: 1px 1px 1px 3px var(--grey-color);
+    backdrop-filter: blur(4px);
+    border: 3mm ridge  var(--cta-color);
 }
 
 .logout_text {
@@ -142,11 +150,34 @@ input.input_checkbox {
 
 .logout_box .link {
     margin-top: 0.5rem;
-    color: var(--primary-color);
+    color: var(--prim-text-color);
     font-weight: bolder;
+}
+
+.logout_box .link:hover {
+    color: var(--cta-color);
 }
 
 .input_container .toast {
     display: flex;
     background-color: var(--cta-sec-color);
+}
+
+@media only screen and (max-width: 720px) {
+    #auth_container {
+        margin-top: 10rem;
+        width: 60vw;
+    }
+    .input_field .input_heading {
+        font-size: 2rem;
+    }
+    .input_label {
+        font-size: 1.2rem;
+    }
+    .auth_btn {
+        font-size: 1.2rem;
+    }
+    #input_subheading {
+        font-size: 1.2rem;
+    }
 }

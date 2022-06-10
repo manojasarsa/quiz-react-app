@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Quizzically
+<img height="50" src="https://raw.githubusercontent.com/manojasarsa/image-assets/main/quiz-app/quizIcon.png">
+</h1>
+<h3 align="center">
+A quiz app with different genres of quizzes. <br/> You Know, You Grow - Quiz App
+</h3>
+<p align="center">
+<img height="375" src="https://user-images.githubusercontent.com/36642146/172560648-2f822d54-538c-4ee1-9032-8f66f962701b.png">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack -
 
-## Available Scripts
+- React JS
+- TypeScript
+- FIREBASE - for Authentication and Database Storage
 
-In the project directory, you can run:
+## Demo - 
+## Features -
 
-### `npm start`
+- Home Page
+  - User can see a landUserng page where list of featured categories is available.    
+- Quizzes by Category
+  - User can play multiple quizzes by category.
+- Rules Page for while attempting Quiz   
+  - Whenever User click on "Play now" on the quiz card. User can see rules for the particular quiz. 
+- MCQ based Quiz Question Page
+  - Once user start playing a quiz user can see a question with multiple answers to it.
+- Result Page with Answers & Score
+  - Once User complete quiz, User can see the result page containing scores and answers.
+- Timer for Quiz Questions
+  - While solving the question user can see a timer for 01:30 mins. If user didn't finish the quiz in the given time it sends user to the result page.
+- Quit Quiz
+  - User can quit a quiz while playing it.
+- Authentication
+  - Sign-up
+  - Login
+  - Logout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Snapshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<table>
+<p  align="center"><strong>Desktop view</strong></p>
 
-### `npm test`
+<tr>
+    <td>
+        <p align="center"><strong>Home Page with categories</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172561656-6e99bd1c-e521-4e55-84ef-48a19b935ce7.png"  />
+    </td>
+    <td>
+        <p align="center"><strong>Explore Quiz Page</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172561962-085670c9-3582-4b3d-8f03-df334eae5143.png"  />
+    </td>
+</tr> 
+<tr>
+    <td>
+        <p align="center"><strong>Rules Page</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172562285-f8ed2f08-26c2-41f9-b744-483087d10aa9.png"  />
+    </td>
+    <td>
+        <p align="center"><strong>Question Page</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172562495-e4597a88-a7c7-415b-a865-108145e7d9e9.png"  />
+    </td>
+</tr>
+<tr>
+    <td>
+        <p align="center"><strong>Result Page</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172563642-f98fb66a-fdc8-4b7c-84a5-c296e79ffe27.png"  />
+    </td>
+    <td>
+        <p align="center"><strong>Login Page</strong></p>
+        <img src="https://user-images.githubusercontent.com/36642146/172561779-9e6e30a6-13e0-439c-a573-d1d2a8418aa0.png"  />
+    </td>
+</tr>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</table>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<table>
+    <p align="center"><strong>Mobile view</strong></p>
+    <tr>
+    <td>
+        <img src="https://user-images.githubusercontent.com/36642146/172566524-688c2322-0143-4154-9bce-4aa6990ad869.png"  />
+    </td>
+</tr> 
+</table>

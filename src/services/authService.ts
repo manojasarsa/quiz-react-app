@@ -2,16 +2,16 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } f
 import { auth } from "../firebase.config";
 import { ServicesType } from "../types";
 
-const signUpService = ({email, password}: ServicesType) => {
-      return createUserWithEmailAndPassword(auth, email, password);
+const signUpService = ({ email, password }: ServicesType) => {
+    return createUserWithEmailAndPassword(auth, email, password);
 }
 
-const signInService = ({email, password}: ServicesType) => {
-      return signInWithEmailAndPassword(auth, email, password);
+const signInService = ({ email, password }: ServicesType) => {
+    return signInWithEmailAndPassword(auth, email, password);
 }
 
 const signOutService = () => {
-      return signOut(auth);
+    return signOut(auth);
 }
 
 export { signUpService, signInService, signOutService };

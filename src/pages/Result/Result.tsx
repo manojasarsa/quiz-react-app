@@ -1,139 +1,62 @@
-import { Link } from "react-router-dom";
 import "./result.css";
+import { DocumentData } from "firebase/firestore";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ResultCard } from "../../components";
+import { useGame } from "../../hooks/useGame";
+import { useAuth } from "../../utils/authMethods";
+import { updateScore } from "../../utils/fireBaseMethods";
 
 export const Result = () => {
+
+    const { resetQuiz, resetSelections, gameState } = useGame();
+
+    const { questions, selectedOptions } = gameState;
+
+    const navigate = useNavigate();
+
+    const { authState: { userInfo: { token }}} = useAuth();
+
+    const finalScore = questions.reduce( 
+        (acc: number, curr: number, index: number) => 
+            questions[index].ansIndex === selectedOptions[index] ? acc + 10 : acc, 0
+    );
+
+    useEffect(() => {
+        (async() => {
+            await updateScore(token, finalScore);
+        })()
+    });
+
     return (
         <div className="main_contain">
             <div className="ques_container flex flex_col">
 
                 <h1 className="ques_heading">Results</h1>
-                <h1 className="ques_heading">Final Score: 20/50</h1>
+                <h1 className="ques_heading">Final Score: {finalScore}/{questions.length * 10}</h1>
 
-                {/* <!-- Ques 1 --> */}
+                {questions.map((quesData: DocumentData, index: number) => (
+                    <ResultCard
+                        key={quesData.id}
+                        currentQuesIndex={index}
+                        question={quesData.question}
+                        ansIndex={quesData.ansIndex}
+                        selectedOption={selectedOptions[index]}
+                        options={quesData.options}
+                    />
+                ))}
 
-                <div className="ques_score_box">
-                    <p className="ques_num">Question 1</p>
-                </div>
-
-                <div className="question">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem aspernatur laudantium excepturi velit maiores quia non rem placeat ad esse?
-                    </p>
-                </div>
-
-                <form className="options flex flex_col no_hover">
-                    <label>
-                        <input type="radio" name="option" value="Option A" /> Option A
-                    </label>
-                    <label className="correct">
-                        <input type="radio" name="option" value="Option B" /> Option B
-                    </label>
-                    <label className="wrong">
-                        <input type="radio" name="option" value="Option C" /> Option C
-                    </label>
-                </form>
-
-                {/* <!-- Ques 2 --> */}
-
-                <div className="ques_score_box">
-                    <p className="ques_num">Question 2</p>
-                </div>
-
-                <div className="question">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem aspernatur laudantium excepturi velit maiores quia non rem placeat ad esse?
-                    </p>
-                </div>
-
-                <form className="options flex flex_col no_hover">
-                    <label className="correct">
-                        <input type="radio" name="option" value="Option A" /> Option A
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="Option B" /> Option B
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="Option C" /> Option C
-                    </label>
-                </form>
-
-                {/* <!-- Ques 3 --> */}
-
-                <div className="ques_score_box">
-                    <p className="ques_num">Question 3</p>
-                </div>
-
-                <div className="question">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem aspernatur laudantium excepturi velit maiores quia non rem placeat ad esse?
-                    </p>
-                </div>
-
-                <form className="options flex flex_col no_hover">
-                    <label className="wrong">
-                        <input type="radio" name="option" value="Option A" /> Option A
-                    </label>
-                    <label className="correct">
-                        <input type="radio" name="option" value="Option B" /> Option B
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="Option C" /> Option C
-                    </label>
-                </form>
-
-                {/* <!-- Ques 4 --> */}
-
-                <div className="ques_score_box">
-                    <p className="ques_num">Question 4</p>
-                </div>
-
-                <div className="question">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem aspernatur laudantium excepturi velit maiores quia non rem placeat ad esse?
-                    </p>
-                </div>
-
-                <form className="options flex flex_col no_hover">
-                    <label>
-                        <input type="radio" name="option" value="Option A" /> Option A
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="Option B" /> Option B
-                    </label>
-                    <label className="correct">
-                        <input type="radio" name="option" value="Option C" /> Option C
-                    </label>
-                </form>
-
-                {/* <!-- Ques 5 --> */}
-
-                <div className="ques_score_box">
-                    <p className="ques_num">Question 5</p>
-                </div>
-
-                <div className="question">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quidem aspernatur laudantium excepturi velit maiores quia non rem placeat ad esse?
-                    </p>
-                </div>
-
-                <form className="options flex flex_col no_hover">
-                    <label className="wrong">
-                        <input type="radio" name="option" value="Option A" /> Option A
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="Option B" /> Option B
-                    </label>
-                    <label className="correct">
-                        <input type="radio" name="option" value="Option C" /> Option C
-                    </label>
-                </form>
+                {/* RESET BUTTON */}
 
                 <div className="ques_btn_box result_btn_box flex flex_justify_center">
-                    <Link to="/" className="ques_btn next_btn">PLAY MORE</Link>
+                    <button className="cta_btn" onClick={() => {
+                        resetQuiz();
+                        resetSelections();
+                        navigate("/");
+                    }}>PLAY MORE</button>
                 </div>
 
             </div>
         </div>
     )
-}
+};

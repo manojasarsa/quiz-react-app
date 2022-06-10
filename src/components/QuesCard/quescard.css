@@ -1,12 +1,12 @@
 .main_contain {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .ques_container {
     width: 50vw;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     margin: 0 auto;
     backdrop-filter: blur(4px);
     background-color: var(--blur-color);
@@ -14,7 +14,7 @@
 
 .ques_heading {
     text-align: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .ques_score_box {
@@ -26,21 +26,17 @@
 .question {
     padding: 1rem 0;
     font-weight: var(--fw-semi-bold);
+    color: var(--primary-color);
 }
 
 .options label {
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 1rem 0;
     cursor: pointer;
     border-radius: 1rem;
-    color: var(--white-color);
+    color: var(--prim-text-color);
     text-align: center;
-    background-color: var(--primary-color);
-}
-
-.options label:hover {
-    background-color: var(--grey-color);
 }
 
 .options input {
@@ -48,21 +44,43 @@
     display: none;
 }
 
+.all_options {
+    background-color: #0b090a;
+}
+
+.all_options:hover {
+    background-color: var(--primary-color);
+}
+
+.chosen_option {
+    background-color: var(--prim-bg-color);
+}
+
 .ques_btn_box {
     padding: 2rem 0;
-    color: var(--primary-color);
-    font-size: 1.5rem;
     font-weight: var(--fw-semi-bold);
     transition: all 0.3s ease-in-out;
 }
 
-.ques_btn_box .ques_btn {
-    color: var(--primary-color);
+.cta_btn {
+    font-size: 1.3rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.ques_btn_box .quit_btn:hover {
-    color: var(--red-color);
-    transition: all 0.1s ease-in-out;
+.cta_btn:hover {
+    color: var(--blue-color);
+}
+
+.quit_btn {
+    background-color: #d90429;
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    color: var(--prim-text-color);
+    border: 1px solid var(--prim-text-color);
+    cursor: pointer;
 }
 
 .ques_btn_box .next_btn:hover {
@@ -75,16 +93,45 @@
     margin-bottom: 1rem;
 }
 
-.timer {
-    background-color: var(--info-background-color);
-    color: var(--primary-color);
-    padding: 0.5rem;
-    font-weight: var(--fw-bold);
-}
-
 .timeleft {
     padding: 0.1rem;
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    margin-left: 0.2rem;
+    color: var(--primary-color);
     font-weight: var(--fw-bold);
+    font-size: 1.2rem;
+}
+
+.timer_modal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.timer_modal_content {
+    gap: 1rem;
+    width: 15rem;
+    height: 15rem;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 5px 1px var(--prim-bg-color);
+    border-radius: 1rem;
+    backdrop-filter: blur(16px);
+}
+
+.timer_btn {
+    border: 1px solid var(--cta-color);
+    border-radius: 1rem;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--prim-bg-color);
+    color: var(--prim-text-color);
+}
+
+@media only screen and (max-width: 720px) {
+    .ques_container {
+        width: 80vw;
+    }
+    .timer_modal_content {
+        width: 10rem;
+        height: 10rem;
+    }
 }
